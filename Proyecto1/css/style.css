@@ -1,0 +1,18 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.cajaPrincipal{
+    width: 100vw;
+    height: 100vh;
+    background: blue;
+}
+
+.cajaDerecha{
+    width: 50vw;
+    height: 50vh;
+    background: green;
+    
+}
+
