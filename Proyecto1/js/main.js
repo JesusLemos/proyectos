@@ -1,6 +1,28 @@
 
+// Funciones y metodos
+const CREARDOM = res => {
+  let elegir = document.getElementById('elegirContenido');
+  let caja = ''
+  let contador=1
+    res.forEach(element => {
+      
+      caja += `<div class="elemento" draggable="true" ondragstart="evdragstart(event)" id="element${contador}" ><p>${element.title}</p>
+      <p>Genero: ${element.genre}</p><video src="${element.stream_url}?client_id=aa06b0630e34d6055f9c6f8beb8e02eb" style="background-image: url(${element.artwork_url});  background-repeat: no-repeat; background-position: top;"></div>`
+      contador++;
+     
+
+    });
+    elegir.innerHTML=caja
+}
+
+
+
+
+
+
+
 //Cargar el domn
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function( ) {
   console.log("DOM fully loaded and parsed");
 });
 
@@ -8,46 +30,31 @@ SC.initialize({
     client_id: 'aa06b0630e34d6055f9c6f8beb8e02eb'
   });
 
-//   let track_url = 'https://soundcloud.com/forss/flickermood';
-//   SC.oEmbed(track_url, { auto_play: true }).then(function(oEmbed) {
-//     console.log('oEmbed response: ', oEmbed);
-// });
-
-
-// SC.stream('/tracks/294').then(function(player){
-//   player.play().then(function(){
-//     console.log('Playback started!');
-//   }).catch(function(e){
-//     console.error('Playback rejected. Try calling play() from a user interaction.', e);
-//   });
-// });
 
 const URL = '/tracks/'
 
-SC.get(URL, { q: "Nani!? She A Scammer", limit: 5}).then(res => console.log(res))
+SC.get(URL, { q: "Nani!? She A Scammer", limit: 4}).then(res =>CREARDOM(res))
 
 
 
-SC.get("/tracks/", { q: "Flickermood", limit: 1}).then(res =>res.permalink_url)
-// .then(res => stream(res).then(function(player){
-//     player.play().then(function(){
-//       console.log('Playback started!');
-//     }).catch(function(e){
-//       console.error('Playback rejected. Try calling play() from a user interaction.', e);
-//     })}))
+// Drag && Drop (Version Copiar)
+function evdragstart(ev){
+  ev.dataTransfer.setData ("text/plain", ev.target.id);
+}
+function evdrop(ev){
+document.getElementById('añadirMusica').innerHTML='';
+ev.preventDefault();
+let data=ev.dataTransfer.getData("text");
+let idData = document.getElementById(data)
 
+let clonarData = ev.target.appendChild(idData.cloneNode(true));
+clonarData.removeAttribute("draggable")
 
-// .catch('Algo Fallo')
+clonarData.lastChild.setAttribute("controls", "")
+// clonarData.lastChild.setAttribute("autoplay", "")
+// prueba.removeAttribute("draggable")
 
-// .then(res => stream(URL +res[].id).then(function(player){
-    // player.play().then(function(){
-    //   console.log('Playback started!')
-    // }).catch(function(e){
-    //   console.error('Playback rejected. Try calling play() from a user interaction.', e);
-    // })}))
-// .catch('Algo falox');
-// SC.connect().then(function() {
-//     return SC.get('/me');
-//   }).then(function(me) {
-//     alert('Hello, ' + me.username);
-//   });
+}
+function evdragover(ev){
+  ev.preventDefault()
+}

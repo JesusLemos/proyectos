@@ -3,16 +3,52 @@
     margin: 0px;
     box-sizing: border-box;
 }
+
 .cajaPrincipal{
+    /* display: flex; */
     width: 100vw;
     height: 100vh;
     background: blue;
+}
+
+/* Parte Superior */
+.encabezado{
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
+/* #añadirMusica{
+    display: flex;
+    justify-content: center;
+} */
+
+
+
+/* Contenido De los videos */
+.contenido{
+    display: flex;
 }
 
 .cajaDerecha{
     width: 50vw;
     height: 50vh;
     background: green;
+    overflow-y: scroll;
+}
+#AñadirMusica{
     
 }
+.cajaIzquierda{
+    width: 50vw;
+    /* height: 100vh; */
+    background: red;
+    /* overflow: scroll; */
+}
 
+video{
+    width: 40%;
+    height: 40%;
+}
