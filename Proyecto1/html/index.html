@@ -13,10 +13,12 @@
     
     <div class="cajaPrincipal">
         <div class="encabezado">
-            <div class="logo">Logo</div>
+            <div class="logo">
+                <img src="../img/logo.png" alt="" width="80px" height="80px">
+            </div>
             <div class="buscador">
                 <input id="textoBuscar" type="text" value="">
-                <button onclick="buscador()">Continuar</button>
+                <button class="button" onclick="buscador()">Continuar</button>
             </div>
 
         </div>  
@@ -24,7 +26,7 @@
         <div class="contenido">
 
             <div class="cajaIzquierda" >
-                <div id="añadirMusica" class="prueba"  ></div>
+                <div id="añadirMusica"  ></div>
             </div>
 
 
@@ -35,7 +37,8 @@
         </div>
         <div id="colocarMusica" ondragover="evdragover(event)" ondrop="evdrop(event)" class="colocarMusica"></div>
     </div>
-
+    
+    <iframe  width="100%" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/" frameborder="0"></iframe>
 
 </body>
 </html>
