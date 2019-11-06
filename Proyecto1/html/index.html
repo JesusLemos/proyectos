@@ -13,17 +13,18 @@
     
     <div class="cajaPrincipal">
         <div class="encabezado">
+            <div class="logo">Logo</div>
             <div class="buscador">
-                <input type="text" value="">
-                <button>Continuar</button>
+                <input id="textoBuscar" type="text" value="">
+                <button onclick="buscador()">Continuar</button>
             </div>
 
         </div>  
 
         <div class="contenido">
-            <div id="AñadirMusica"></div>
-            <div  class="cajaIzquierda" ondragover="evdragover(event)" ondrop="evdrop(event)">
-             
+
+            <div class="cajaIzquierda" >
+                <div id="añadirMusica" class="prueba"  ></div>
             </div>
 
 
@@ -32,7 +33,7 @@
                 </div>
 
         </div>
-
+        <div id="colocarMusica" ondragover="evdragover(event)" ondrop="evdrop(event)" class="colocarMusica"></div>
     </div>
 
 

@@ -8,24 +8,29 @@
     /* display: flex; */
     width: 100vw;
     height: 100vh;
-    background: blue;
+    /* background: blue; */
 }
 
 /* Parte Superior */
 .encabezado{
+    width: 100vw;
     height: 20vh;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
     
 }
-/* #añadirMusica{
+
+.logo{
+    width: 50%;
+    height: 100%;
     display: flex;
-    justify-content: center;
-} */
-
-
+    align-items: center;
+}
+.buscador{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
 
 /* Contenido De los videos */
 .contenido{
@@ -35,20 +40,34 @@
 .cajaDerecha{
     width: 50vw;
     height: 50vh;
-    background: green;
-    overflow-y: scroll;
+    /* background: green; */
+    /* overflow-y: scroll; */
 }
-#AñadirMusica{
-    
+.musica{
+    width: 100%;
+    height: 100%;
 }
 .cajaIzquierda{
     width: 50vw;
     /* height: 100vh; */
-    background: red;
+    /* background: red; */
     /* overflow: scroll; */
 }
 
+.colocarMusica{
+    width: 25%;
+    height: 25%;
+    /* background-color: yellow; */
+}
 video{
     width: 40%;
     height: 40%;
+}
+.prueba{
+    width: 100%;
+    height: 100%;
+}
+
+#v1{
+    background-image:url('sonido.png') ;
 }
