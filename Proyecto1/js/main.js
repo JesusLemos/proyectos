@@ -1,14 +1,3 @@
-
-
-//Cargar el domn y
-document.addEventListener("DOMContentLoaded", function( ) {
-  console.log("DOM fully loaded and parsed");
-});
-
-
-
-
-
 SC.initialize({
   client_id: 'aa06b0630e34d6055f9c6f8beb8e02eb'
 });
@@ -18,24 +7,28 @@ SC.initialize({
 const CREARDOM = res => {
   let elegir = document.getElementById('elegirContenido');
   let caja = ''
-  let contador=1
+  let img =''
+  
   res.forEach(element => {
-    
-    caja += `<div class="elemento" draggable="true" ondragstart="evdragstart(event)" id="${element.id}" >
+    if(element.artwork_url===null){
+      img = `../img/sonido.png`
+      } else{
+        img= element.artwork_url.replace('-large','-t500x500');
+       
+        }
 
-    <p>${element.title}</p>
-    <p>Genero: ${element.genre}</p> </div>`
+    caja += `
+    <div class="elemento" draggable="true" ondragstart="evdragstart(event)" id="${element.id}" >
+      <img src="${img}" draggable="false" alt="Fallo al cargar" width="100%" heigth="25%"  >
+      <div>
+        <p>Titulo: ${element.title}</p>
+        <p>Genero: ${element.genre}</p>
+      </div> 
+    </div>`
+   
+  });
+ 
     
-    
-    contador++;
-    
-    // } else{
-      //   prueba.style.property="background-image: url(${element.artwork_url})";
-      //   prueba.style.property="background-repeat: no-repeat";
-      //   prueba.style.property="background-position: top";
-      
-      // }
-    });
     elegir.innerHTML=caja
     
     contador=1
@@ -62,18 +55,18 @@ const buscador = () => {
 // Drag && Drop (Version Copiar)
 
 function evdragstart(ev){
-  ev.dataTransfer.setData ("text", ev.target.id);
+  ev.dataTransfer.setData ("text/plain", ev.target.id);
 }
 function evdrop(ev){
 
-  let producir = document.getElementById('añadirMusica')
+  let producir = document.getElementById('producirMusica')
   producir.innerHTML=""
 
     ev.preventDefault();
     let data=ev.dataTransfer.getData("text");
-
+console.log()
     let urlIframe=`<iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${data}?client_id=aa06b0630e34d6055f9c6f8beb8e02eb"
-    width="100%" height="166" scrolling="no" frameborder="no" ></iframe>`
+    width="100%" height="100%" scrolling="no" frameborder="no" ></iframe>`
 
     producir.innerHTML=urlIframe;
   }

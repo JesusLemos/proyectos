@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Soundcloud</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js"></script>
-    <script src="../js/main.js"></script>
 </head>
 <body>
     
@@ -15,30 +13,34 @@
         <div class="encabezado">
             <div class="logo">
                 <img  src="../img/sonido.png" alt="" width="80px" height="80px">
-                
             </div>
             <div class="buscador">
                 <input id="textoBuscar" class="input" type="text" value="">
                 <button class="button" onclick="buscador()"><img src="../img/lupa.png" width="100%" height="100%"></button>
             </div>
-
         </div>  
-
-        <div class="cajaIzquierda" >
-            <div id="añadirMusica"  ></div>
-        </div>
+        
         <div class="contenido">
-
-
-
-            
-            <div id="colocarMusica" ondragover="evdragover(event)" ondrop="evdrop(event)" class="colocarMusica"></div>
-                <div id="elegirContenido" class="cajaDerecha" ></div>
+            <div  id="producirMusica" class="producirMusica">
+                <iframe 
+                    src="https://w.soundcloud.com/player/?url="
+                    width="100%" 
+                    scrolling="no" 
+                    frameborder="no" 
+                    height="100%">
+                </iframe>
+            </div>
+            <div class="colocarMusica" ondragover="evdragover(event)" ondrop="evdrop(event)">
+                <p> Ponga aqui la musica </p>
+            </div>
         </div>
-    </div>
-    
-    <!-- <iframe  width="100%" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/" frameborder="0"></iframe> -->
-    <!-- <iframe  width="100%" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/293?client_id=aa06b0630e34d6055f9c6f8beb8e02eb" frameborder="0"></iframe> -->
-    <!-- https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/293 -->
+        
+        
+        <div id="elegirContenido" class="seleccionMusica" >
+            <!-- Auto HTML -->
+        </div>
+
+        <script src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js"></script>
+        <script src="../js/main.js"></script>
 </body>
 </html>
