@@ -1,9 +1,18 @@
 
 
-//Cargar el domn
+//Cargar el domn y
 document.addEventListener("DOMContentLoaded", function( ) {
   console.log("DOM fully loaded and parsed");
 });
+
+
+
+
+
+SC.initialize({
+  client_id: 'aa06b0630e34d6055f9c6f8beb8e02eb'
+});
+
 
 // Funciones y metodos
 const CREARDOM = res => {
@@ -44,11 +53,6 @@ const buscador = () => {
 
 
 
-SC.initialize({
-    client_id: 'aa06b0630e34d6055f9c6f8beb8e02eb'
-  });
-
-
 
 
 
@@ -70,8 +74,8 @@ function evdrop(ev){
 
     let urlIframe=`<iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${data}?client_id=aa06b0630e34d6055f9c6f8beb8e02eb"
     width="100%" height="166" scrolling="no" frameborder="no" ></iframe>`
-    
-    producir.innerHTML=urlIframe
+
+    producir.innerHTML=urlIframe;
   }
 
 
