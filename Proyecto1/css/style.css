@@ -11,7 +11,6 @@
   
     width: 100vw;
     height: 100vh;
-    /* background: #AEAEAE; */
     background-color: #537ec5;
 }
 
@@ -20,7 +19,6 @@
     width: 100%;
     height: 15vh;
     display: flex;
-    /* background: #333; */
     background-color: #010038;
     
 }
@@ -44,13 +42,9 @@
     justify-content: center;
 }
 .button{
-    /* background-color: rgba(255,255,255, 0.1); */
-    width:2rem;
     border: none;
     height: 2rem;
-    /* background-color: rgba(255,255,255, 0.1); */
     background: #010038;
-    /* border-radius: 100%; */
     color: black;
     cursor: pointer;
     font-size: 16px;
@@ -60,25 +54,21 @@
     margin-left: 2%;
     
 }
-/* .button:hover{
-    background: #1B26C9;
-} */
+
 
 .input{
     border:none;
-    /* border-radius: 100%; */
+  
     outline:none;
     width: 50%;
     height: 30%;
     padding-left: 1.5%;
     background:rgb(211, 211, 211); 
     border-bottom:1px solid white;
-    /* color: white; */
     font-weight: bold;
     
 }
 .input:focus{
-    /* background:#1B26C9;; */
     background: rgb(165, 201, 255) ;
 }
 
@@ -103,13 +93,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* color: ; */
 }
 
 .elemento{
 
     width: 20%;
-    /* background: #f39422; */
     margin: 2% ;
 }
 .elementoImg{
@@ -119,11 +107,6 @@
     justify-content: center;
     flex-direction: column;
 }
-
-
-
-
-
 
 
 .seleccionMusica{

@@ -31,23 +31,12 @@ const CREARDOM = res => {
     
     elegir.innerHTML=caja
     
-    contador=1
-    
 }
 
 const buscador = () => {
   let musica = document.getElementById('textoBuscar').value
-  // console.log(musica)
   SC.get('/tracks/', { q:musica }).then(res =>CREARDOM(res))
 }
-
-
-
-
-
-
-
-
 
 
 
