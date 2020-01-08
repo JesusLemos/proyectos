@@ -108,7 +108,9 @@
 .elemento img {
     border:2px solid black;
 }
-
+.elementoTexto span{
+   font-weight: bold;
+}
 .elementoImg{
     width: 100%;
     display: flex;

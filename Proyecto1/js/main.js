@@ -20,9 +20,9 @@ const CREARDOM = res => {
     caja += `
     <div class="elemento" draggable="true" ondragstart="evdragstart(event)" id="${element.id}" >
       <img src="${img}" draggable="false" alt="Fallo al cargar" width="100%" heigth="25%"  >
-      <div>
-        <p>Titulo: ${element.title}</p>
-        <p>Genero: ${element.genre}</p>
+      <div class="elementoTexto">
+        <p><span>Título:</span> ${element.title}</p>
+        <p><span>Género:</span> ${element.genre}</p>
       </div> 
     </div>`
    
