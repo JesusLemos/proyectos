@@ -43,7 +43,7 @@
 }
 .button{
     border: none;
-    height: 2rem;
+    /* height: 3rem; */
     background: #010038;
     color: black;
     cursor: pointer;
@@ -68,9 +68,11 @@
     font-weight: bold;
     
 }
+
 .input:focus{
     background: rgb(165, 201, 255) ;
 }
+
 
 /* Contenido De los videos */
 .contenido{
